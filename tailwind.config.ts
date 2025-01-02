@@ -22,22 +22,22 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "#1A1F2C",
-        foreground: "#FFFFFF",
+        background: "#1A1F2C", // Dark blue background
+        foreground: "#FFFFFF", // White text
         primary: {
-          DEFAULT: "#0EA5E9",
+          DEFAULT: "#0EA5E9", // Bright blue for primary elements
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#1E293B",
+          DEFAULT: "#1E293B", // Slightly lighter blue for secondary elements
           foreground: "#FFFFFF",
         },
         muted: {
-          DEFAULT: "#334155",
+          DEFAULT: "#334155", // Muted blue for subtle elements
           foreground: "#94A3B8",
         },
         accent: {
-          DEFAULT: "#0EA5E9",
+          DEFAULT: "#0EA5E9", // Same as primary for consistency
           foreground: "#FFFFFF",
         },
       },
