@@ -84,45 +84,43 @@ const About = () => {
 
         <div className="mt-16 animate-on-scroll">
           <h3 className="text-2xl font-semibold mb-8 text-center">Technical Skills</h3>
-          <ScrollArea className="w-full whitespace-nowrap rounded-md border">
-            <div className="flex p-4 gap-6">
-              {technicalSkills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="skill-card flex flex-col items-center bg-background p-6 rounded-lg min-w-[200px]"
-                >
-                  <div className="relative w-24 h-24 mb-4">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-2xl font-bold text-primary">{skill.percentage}%</div>
-                    </div>
-                    <svg className="w-full h-full transform -rotate-90 skill-progress">
-                      <circle
-                        cx="48"
-                        cy="48"
-                        r="45"
-                        fill="transparent"
-                        stroke="currentColor"
-                        strokeWidth="6"
-                        className="text-muted opacity-25"
-                      />
-                      <circle
-                        cx="48"
-                        cy="48"
-                        r="45"
-                        fill="transparent"
-                        stroke="currentColor"
-                        strokeWidth="6"
-                        strokeDasharray={`${2 * Math.PI * 45}`}
-                        strokeDashoffset={`${2 * Math.PI * 45 * (1 - skill.percentage / 100)}`}
-                        className="text-primary"
-                      />
-                    </svg>
+          <div className="skills-container">
+            {technicalSkills.map((skill, index) => (
+              <div
+                key={index}
+                className="skill-card flex flex-col items-center bg-background p-6 rounded-lg min-w-[200px]"
+              >
+                <div className="relative w-24 h-24 mb-4">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-2xl font-bold text-primary">{skill.percentage}%</div>
                   </div>
-                  <h4 className="font-semibold text-lg">{skill.name}</h4>
+                  <svg className="w-full h-full transform -rotate-90 skill-progress">
+                    <circle
+                      cx="48"
+                      cy="48"
+                      r="45"
+                      fill="transparent"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                      className="text-muted opacity-25"
+                    />
+                    <circle
+                      cx="48"
+                      cy="48"
+                      r="45"
+                      fill="transparent"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                      strokeDasharray={`${2 * Math.PI * 45}`}
+                      strokeDashoffset={`${2 * Math.PI * 45 * (1 - skill.percentage / 100)}`}
+                      className="text-primary"
+                    />
+                  </svg>
                 </div>
-              ))}
-            </div>
-          </ScrollArea>
+                <h4 className="font-semibold text-lg">{skill.name}</h4>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

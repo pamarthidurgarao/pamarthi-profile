@@ -20,31 +20,34 @@ const Navigation = () => {
 
   return (
     <nav className="fixed w-full bg-background/90 backdrop-blur-sm z-50 py-4">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold text-primary">Portfolio</a>
-        
-        <div className="flex items-center gap-4">
-          <ThemeToggle />
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center">
+          <a href="#home" className="text-2xl font-bold text-primary">Portfolio</a>
+          
+          {/* Desktop menu */}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.href)}
+                className="nav-link"
+              >
+                {item.label}
+              </button>
+            ))}
+            <ThemeToggle />
+          </div>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex gap-8">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => scrollToSection(item.href)}
-              className="nav-link"
+          {/* Mobile menu button and theme toggle */}
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeToggle />
+            <button 
+              className="text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
             >
-              {item.label}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-          ))}
+          </div>
         </div>
 
         {/* Mobile menu */}

@@ -14,8 +14,8 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider defaultTheme="dark" attribute="class">
-      <div className="min-h-screen">
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+      <div className="min-h-screen bg-background transition-colors duration-300">
         <Navigation />
         <Hero />
         <About />

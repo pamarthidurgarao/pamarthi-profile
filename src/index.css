@@ -3,8 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
 }
 
@@ -67,4 +79,27 @@
 
 .skill-progress circle {
   transition: stroke-dashoffset 1s ease-in-out;
+}
+
+/* Skills horizontal scroll */
+.skills-container {
+  @apply flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.primary.DEFAULT') theme('colors.secondary.DEFAULT');
+}
+
+.skills-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.skills-container::-webkit-scrollbar-track {
+  @apply bg-secondary rounded-full;
+}
+
+.skills-container::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+.skill-card {
+  @apply snap-start flex-shrink-0;
 }
