@@ -1,27 +1,30 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { useEffect } from "react";
 import { ThemeProvider } from "next-themes";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { Toaster } from "@/components/ui/toaster";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Portfolio from "@/components/Portfolio";
+import Contact from "@/components/Contact";
+import { initScrollAnimations } from "./utils/scrollAnimations";
 
-const queryClient = new QueryClient();
+function App() {
+  useEffect(() => {
+    initScrollAnimations();
+  }, []);
 
-const App = () => (
-  <ThemeProvider defaultTheme="dark" attribute="class">
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
+  return (
+    <ThemeProvider defaultTheme="dark" attribute="class">
+      <div className="min-h-screen">
+        <Navigation />
+        <Hero />
+        <About />
+        <Portfolio />
+        <Contact />
         <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </ThemeProvider>
-);
+      </div>
+    </ThemeProvider>
+  );
+}
 
 export default App;
