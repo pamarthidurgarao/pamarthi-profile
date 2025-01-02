@@ -9,10 +9,10 @@ const Hero = () => {
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-xl md:text-2xl text-primary mb-4">Welcome to my Portfolio</h2>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Hi, I'm <span className="text-primary">John Doe</span>
+              Hi, I'm <span className="text-primary">Durga Rao Pamarthi</span>
             </h1>
             <div className="typing-demo text-2xl md:text-3xl mb-8">
-              Frontend Developer
+              Full Stack Developer
             </div>
             <Button 
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}

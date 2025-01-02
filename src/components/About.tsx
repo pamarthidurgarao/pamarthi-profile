@@ -21,6 +21,11 @@ const About = () => {
   ];
 
   const technicalSkills = [
+    { name: "Java", percentage: 90 },
+    { name: "SpringBoot", percentage: 90 },
+    { name: "Angular", percentage: 90 },
+    { name: "JPA", percentage: 90 },
+    { name: "ORM", percentage: 90 },
     { name: "React", percentage: 90 },
     { name: "JavaScript", percentage: 85 },
     { name: "TypeScript", percentage: 80 },
