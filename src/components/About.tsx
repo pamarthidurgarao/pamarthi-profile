@@ -36,11 +36,11 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">About Me</h2>
-        <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-on-scroll">About Me</h2>
+        <div className="w-20 h-1 bg-primary mx-auto mb-12 animate-on-scroll"></div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
+          <div className="animate-on-scroll">
             <h3 className="text-2xl font-semibold mb-6">
               A passionate developer who loves to code
             </h3>
@@ -64,7 +64,7 @@ const About = () => {
             </div>
           </div>
           
-          <div className="grid gap-6">
+          <div className="grid gap-6 animate-on-scroll">
             {skills.map((skill, index) => (
               <div 
                 key={index}
@@ -82,20 +82,20 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-16 animate-on-scroll">
           <h3 className="text-2xl font-semibold mb-8 text-center">Technical Skills</h3>
           <ScrollArea className="w-full whitespace-nowrap rounded-md border">
             <div className="flex p-4 gap-6">
               {technicalSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center bg-background p-6 rounded-lg min-w-[200px] hover:transform hover:-translate-y-1 transition-transform duration-300"
+                  className="skill-card flex flex-col items-center bg-background p-6 rounded-lg min-w-[200px]"
                 >
                   <div className="relative w-24 h-24 mb-4">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-2xl font-bold text-primary">{skill.percentage}%</div>
                     </div>
-                    <svg className="w-full h-full transform -rotate-90">
+                    <svg className="w-full h-full transform -rotate-90 skill-progress">
                       <circle
                         cx="48"
                         cy="48"
@@ -114,7 +114,7 @@ const About = () => {
                         strokeWidth="6"
                         strokeDasharray={`${2 * Math.PI * 45}`}
                         strokeDashoffset={`${2 * Math.PI * 45 * (1 - skill.percentage / 100)}`}
-                        className="text-primary transition-all duration-1000 ease-out"
+                        className="text-primary"
                       />
                     </svg>
                   </div>

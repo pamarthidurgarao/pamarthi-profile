@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,13 +23,16 @@ const Navigation = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#home" className="text-2xl font-bold text-primary">Portfolio</a>
         
-        {/* Mobile menu button */}
-        <button 
-          className="md:hidden text-white"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          {/* Mobile menu button */}
+          <button 
+            className="md:hidden text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* Desktop menu */}
         <div className="hidden md:flex gap-8">
