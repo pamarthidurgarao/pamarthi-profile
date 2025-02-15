@@ -7,6 +7,8 @@ import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
 import { initScrollAnimations } from "./utils/scrollAnimations";
+import Certifications from "./components/Certifications";
+import Projects from "./components/Projects";
 
 function App() {
   useEffect(() => {
@@ -20,6 +22,8 @@ function App() {
         <Hero />
         <About />
         <Portfolio />
+        <Certifications/>
+        {/* <Projects/> */}
         <Contact />
         <Toaster />
       </div>

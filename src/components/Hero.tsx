@@ -25,7 +25,7 @@ const Hero = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse"></div>
               <img
-                src="/placeholder.svg"
+                src="https://drive.google.com/file/d/1VbHNILdaM1yboCLwLrD-VqTJYB93VVW9/preview"
                 alt="Profile"
                 className="rounded-full w-full h-full object-cover border-4 border-primary"
               />

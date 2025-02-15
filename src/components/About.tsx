@@ -15,8 +15,8 @@ const About = () => {
     },
     {
       icon: Code,
-      title: "Clean Code",
-      description: "Writing maintainable and scalable code following best practices.",
+      title: "Cloud",
+      description: "Worked on multiple public clouds ",
     },
   ];
 
@@ -56,15 +56,15 @@ const About = () => {
             <div className="space-y-4">
               <div className="flex gap-2">
                 <span className="text-primary">▹</span>
-                <span>5+ years of development experience</span>
+                <span>10+ years of experience in Software Development on J2EE, JS Technologies and Pyhton</span>
               </div>
               <div className="flex gap-2">
                 <span className="text-primary">▹</span>
-                <span>Worked with multiple Fortune 500 companies</span>
+                <span>Architecting and implementing highly scalable microservices for enterprise applications.</span>
               </div>
               <div className="flex gap-2">
                 <span className="text-primary">▹</span>
-                <span>Delivered 50+ successful projects</span>
+                <span>Developing responsive and dynamic user interfaces with React and Angular.</span>
               </div>
             </div>
           </div>
