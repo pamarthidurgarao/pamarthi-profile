@@ -1,33 +1,23 @@
-import { useEffect } from "react";
-import { ThemeProvider } from "next-themes";
-import { Toaster } from "@/components/ui/toaster";
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Portfolio from "@/components/Portfolio";
-import Contact from "@/components/Contact";
-import { initScrollAnimations } from "./utils/scrollAnimations";
-import Certifications from "./components/Certifications";
-import Projects from "./components/Projects";
+import React from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Certifications from './components/Certifications';
+import Employment from './components/Employment';
+import Contact from './components/Contact';
 
 function App() {
-  useEffect(() => {
-    initScrollAnimations();
-  }, []);
-
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-      <div className="min-h-screen bg-background transition-colors duration-300">
-        <Navigation />
-        <Hero />
-        <About />
-        <Portfolio />
-        <Certifications/>
-        {/* <Projects/> */}
-        <Contact />
-        <Toaster />
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <Hero />
+      <Skills />
+      <Projects />
+      <Certifications />
+      <Employment />
+      <Contact />
+    </div>
   );
 }
 

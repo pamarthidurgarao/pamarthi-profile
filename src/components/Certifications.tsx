@@ -1,62 +1,66 @@
-import { Code, Layout, Server } from "lucide-react";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Award } from 'lucide-react';
 
-const Certifications = () => {
-  const skills = [
-    {
-      icon: "AZ-900",
-      title: "Microsoft Azure Fundamentals",
-      description: "Creating responsive and interactive user interfaces using modern web technologies.",
-    },
-    {
-      icon: "AZ-204",
-      title: "Developing Solutions for Microsoft Azure",
-      description: "Building robust server-side applications and APIs.",
-    },
-    {
-      icon: "AZ-104",
-      title: "Microsoft Azure Administrator",
-      description: "Writing maintainable and scalable code following best practices.",
-    },
-  ];
+const certifications = [
+  {
+    title: "AZ-900: Microsoft Azure Fundamentals",
+    description: "Validated understanding of cloud concepts and Microsoft Azure services",
+    image: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg"
+  },
+  {
+    title: "AZ-204: Developing Solutions for Microsoft Azure",
+    description: "Expertise in developing solutions using Azure services and workflows",
+    image: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg"
+  },
+  {
+    title: "AZ-104: Microsoft Azure Administrator",
+    description: "Proficiency in implementing, managing, and monitoring Azure infrastructure",
+    image: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg"
+  }
+];
 
-
+export default function Certifications() {
   return (
-    <section id="about" className="py-20 bg-secondary">
+    <section id="certifications" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-on-scroll">Cloud Certifications</h2>
-        <div className="w-20 h-1 bg-primary mx-auto mb-12 animate-on-scroll"></div>
-
-        <div className="grid md:grid-cols-2 gap-2 items-center mb-16">
-          {skills.map((skill, index) => (
-            <div className="bg-background p-6 rounded-lg flex gap-4 hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="flex items-center space-x-4">
-                <div>{skill.icon}</div>
-                <div>
-                  <h3 className="text-lg font-semibold ">
-                    {skill.title}
-                  </h3>
+        <motion.h2 
+          className="text-4xl font-bold text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Certifications
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {certifications.map((cert, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <div className="relative h-48">
+                <img 
+                  src={cert.image} 
+                  alt={cert.title}
+                  className="w-full h-full"
+                />
+                <div className="absolute top-4 right-4">
+                  <Award className="w-8 h-8 text-purple-600" />
                 </div>
               </div>
-              {/* <div className="mt-4">
-                <p className="text-sm">
-                  Issued: <span className="font-medium ">January 2025</span>
-                </p>
-                <a
-                  href="https://www.credly.com/badge-link"
-                  target="_blank"
-                  className="mt-2 inline-block text-blue-600 hover:underline text-sm font-medium"
-                >
-                  Verify Certification →
-                </a>
-              </div> */}
-            </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">{cert.title}</h3>
+                <p className="text-gray-600">{cert.description}</p>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
-
   );
-};
-
-export default Certifications;
+}
